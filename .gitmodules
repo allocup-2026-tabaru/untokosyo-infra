@@ -1,0 +1,6 @@
+[submodule "untokosyo-be"]
+	path = untokosyo-be
+	url = git@github.com:allocup-2026-tabaru/untokosyo-be.git
+[submodule "untokosyo-fe"]
+	path = untokosyo-fe
+	url = git@github.com:allocup-2026-tabaru/untokosyo-fe.git
