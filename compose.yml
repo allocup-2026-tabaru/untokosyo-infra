@@ -9,3 +9,20 @@ services:
       - ./untokosyo-be:/app
     env_file:
       - ./envs/be.env
+
+  frontend:
+    build:
+      context: ./untokosyo-fe
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./untokosyo-fe:/app
+      - fe_node_modules:/app/node_modules
+    env_file:
+      - ./envs/fe.env
+    environment:
+      - WATCHPACK_POLLING=true
+
+volumes:
+  fe_node_modules:
