@@ -1,0 +1,4 @@
+envs/*.env
+untokosyo-be/.env
+untokosyo-fe/.env
+untokosyo-fe/.env.local

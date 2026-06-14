@@ -1,0 +1,11 @@
+services:
+  backend:
+    build:
+      context: ./untokosyo-be
+      dockerfile: Dockerfile.dev
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./untokosyo-be:/app
+    env_file:
+      - ./envs/be.env
