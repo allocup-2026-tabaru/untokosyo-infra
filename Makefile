@@ -1,5 +1,6 @@
-.PHONY: init update be fe env-tmp env-set
+.PHONY: init update be fe env-tmp env-set up deploy
 
+# ── 開発環境 ────────────────────────────────────────────────
 init:
 	git submodule update --init --recursive
 
@@ -28,6 +29,10 @@ env-tmp:
 env-set:
 	cp envs/be.env untokosyo-be/.env
 	cp envs/fe.env untokosyo-fe/.env.local
+
+# ── デプロイ ─────────────────────────────────────────────────
+deploy:
+	$(MAKE) -C untokosyo-be deploy
 
 %:
 	@:
