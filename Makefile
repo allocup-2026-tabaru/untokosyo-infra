@@ -1,4 +1,4 @@
-.PHONY: init update be fe env-tmp env-set up deploy
+.PHONY: init update be fe env-tmp env-set up deploy deploy-be deploy-fe deploy-all
 
 # ── 開発環境 ────────────────────────────────────────────────
 init:
@@ -31,8 +31,13 @@ env-set:
 	cp envs/fe.env untokosyo-fe/.env.local
 
 # ── デプロイ ─────────────────────────────────────────────────
-deploy:
+deploy-be:
 	$(MAKE) -C untokosyo-be deploy
+
+deploy-fe:
+	$(MAKE) -C untokosyo-fe deploy
+
+deploy: deploy-be deploy-fe
 
 %:
 	@:
